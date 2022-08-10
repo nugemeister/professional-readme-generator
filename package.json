@@ -1,7 +1,7 @@
 {
   "name": "static-site",
   "version": "1.0.0",
-  "description": "",
+  "description": "## Project Explained The purpose of this project is to create a command-line application that dynamically generates a professional README.md file from a user's input using the Inquirer package (https://www.npmjs.com/package/inquirer/v/8.2.4). <br></br> ## Success Criteria",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,5 +10,15 @@
   "license": "ISC",
   "dependencies": {
     "inquirer": "8.2.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nugemeister/professional-readme-generator.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/nugemeister/professional-readme-generator/issues"
+  },
+  "homepage": "https://github.com/nugemeister/professional-readme-generator#readme"
 }
