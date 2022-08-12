@@ -5,7 +5,7 @@ const fs = require('fs');
 
 // ask the user for data
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown');
+const generateMd = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -37,7 +37,7 @@ const questions = [
     {
         type: "input",
         message: "Please enter any usage instructions for using your project.",
-        name: "userStory",
+        name: "usageInstructions",
     },
     {
         type: "list",
@@ -97,20 +97,20 @@ function init() {
     inquirer.prompt([
         {
             type: 'list',
-            message: 'You are about to begin the README generator!',
-            name: 'start'
-            choices: ['Go', 'Leave'],
+            message: 'Would you like to begin the README generator?',
+            name: 'start',
+            choices: ['Yes', 'No'],
         }
     ])
         .then((response) => {
-            if(response.start === "Go")
+            if(response.start === "Yes") {
             inquirer.prompt(questions)
             
-            .then((response)) => {
-                const readme = generateMarkdown(response);
+            .then((response) => {
+                const readme = generateMd(response);
                 
                 writeToFile("README.md", readme);
-            }
+            })}
         });
 }
 

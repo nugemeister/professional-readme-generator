@@ -40,13 +40,33 @@ function generateMarkdown(data) {
   console.log("generateMarkdown is running!");
   renderLicenseBadge(data);
   renderLicenseLink(data);
+  renderLicenseSection(data);
   return `
-    # ${data.title};
-    $ ${data.description}
+    # ${data.projectTitle};
 
+    ## Project Explained
+    $ ${data.projectDescription}
+
+    ## Success Criteria
+
+    ### User Stories
+    $ ${data.userStory}
+
+    ### Acceptance Criteria
+    $ ${data.acceptanceCriteria}
+
+    ## Link to Deployed Application
+    $ ${data.link}
+
+    ## Usage Instructions
+    $ ${data.usageInstructions}
+
+    ### Authors
+    $ ${data.author}
+    $ ${data.userEmail}
+    $ ${data.userGithub}
 
   `; 
 }
-
 
 module.exports = generateMarkdown;

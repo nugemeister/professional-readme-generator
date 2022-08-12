@@ -31,12 +31,6 @@ WHEN I click on the links in the Table of Contents
 THEN I am taken to the corresponding section of the README
 
 ```
-
-## Link to Deployed Application
-
-The following link takes you to the deployed application: https://nugemeister.github.io/professional-readme-generator/
-<br></br>
-
 ## Finished Page for Reference
 
 The following image shows the web application's appearance and functionality:
