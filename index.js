@@ -87,7 +87,7 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     console.log("writeToFile is running!");
-    fs.writeToFile(`./output/${fileName}`, data, (err) =>
+    fs.writeFileSync(`./output/${fileName}`, data, (err) =>
     err ? console.error(err) : console.log('README is generated! You can locate the file in the output folder.'))
 }
 

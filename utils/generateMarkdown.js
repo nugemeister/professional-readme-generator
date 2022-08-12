@@ -22,7 +22,14 @@ function renderLicenseLink(license) {
   }
 }
 
-function renderLicenseSection(license) {
+function renderLicenseInfo(license) {
+  if(license === "None") {
+    return "";
+  } else 
+  return `* [License](#license)`
+}
+
+function renderLicenseInfo(license) {
   if(license === "None") {
     return "";
   } else if(license === "Other") {
@@ -40,33 +47,34 @@ function generateMarkdown(data) {
   console.log("generateMarkdown is running!");
   renderLicenseBadge(data);
   renderLicenseLink(data);
-  renderLicenseSection(data);
+  renderLicenseInfo(data);
   return `
-    # ${data.projectTitle};
+# ${data.projectTitle};
 
-    ## Project Explained
-    $ ${data.projectDescription}
+## Project Explained
+  ${data.projectDescription}
 
-    ## Success Criteria
+## Success Criteria
 
-    ### User Stories
-    $ ${data.userStory}
+### User Stories
+  ${data.userStory}
 
-    ### Acceptance Criteria
-    $ ${data.acceptanceCriteria}
+### Acceptance Criteria
+  ${data.acceptanceCriteria}
 
-    ## Link to Deployed Application
-    $ ${data.link}
+## Link to Deployed Application
+  ${data.link}
 
-    ## Usage Instructions
-    $ ${data.usageInstructions}
+## Usage Instructions
+  ${data.usageInstructions}
+  ${renderLicenseInfo(data.license)}
 
-    ### Authors
-    $ ${data.author}
-    $ ${data.userEmail}
-    $ ${data.userGithub}
+### Authors
+* ${data.author}
+* ${data.userEmail}
+* ${data.userGithub}
 
-  `; 
+`; 
 }
 
 module.exports = generateMarkdown;
