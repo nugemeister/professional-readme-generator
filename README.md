@@ -35,6 +35,6 @@ THEN I am taken to the corresponding section of the README
 
 The following image shows the web application's appearance and functionality:
 
-![This is a screenshot of the live webpage.](./assets/images/06-server-side-apis-homework-demo.png)
+![This is a video of the live webpage.](HW9-Ali%20Nugen_08122022.webm)
 <br></br>
 
