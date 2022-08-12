@@ -8,9 +8,12 @@ function renderTitle(title) {
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
-  return `# ${data.title}
-
-`;
+  console.log("generateMarkdown is running!");
+  renderLicenseBadge(data);
+  renderLicenseLink(data);
+  return `# ${data.title}`;
 }
+
+${licenseBadge}${renderLicenseLink}
 
 module.exports = generateMarkdown;
