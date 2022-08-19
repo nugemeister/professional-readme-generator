@@ -3,7 +3,9 @@
 function renderLicenseBadge(license) {
   if(license === "Apache2.0") {
     return "License-Apache_2.0-blue.svg"
-  } else if(license === "GPLv2-blue.svg") {
+  } else if(license === "BSD-3-Clause") {
+    return "License-BSD-3-Clause-blue.svg"
+  } else if(license === "GPLv2") {
     return "License-GPLv2-blue.svg"
   } else if(license === "MIT") {
     return "License-MIT-yellow.svg"
@@ -22,14 +24,15 @@ function renderLicenseLink(license) {
   }
 }
 
-function renderLicenseInfo(license) {
+function renderLicenseShortcut(license) {
   if(license === "None") {
-    return "";
+    return "* [Contributing](#contributing)";
   } else 
-  return `* [License](#license)`
+  return `* [License](#license)
+  * [Contributing](#contributing)`
 }
 
-function renderLicenseInfo(license) {
+function renderLicenseSection(license) {
   if(license === "None") {
     return "";
   } else if(license === "Other") {
@@ -47,13 +50,22 @@ function generateMarkdown(data) {
   console.log("generateMarkdown is running!");
   renderLicenseBadge(data);
   renderLicenseLink(data);
-  renderLicenseInfo(data);
+  renderLicenseSection(data);
   return `
 # ${data.projectTitle};
 
 ## Project Explained
   ${data.projectDescription}
-
+---
+## Table of Contents:
+* [Success Criteria](#success)
+* [Acceptance Criteria](#acceptanceCriteria)
+* [Installation](#installation)
+* [Tests](#tests)
+* [Link to Deployed Application](#link)
+* [Usage](#usageInstructions)
+${renderLicenseShortcut(data.license)}
+---
 ## Success Criteria
 
 ### User Stories
@@ -62,18 +74,30 @@ function generateMarkdown(data) {
 ### Acceptance Criteria
   ${data.acceptanceCriteria}
 
+## Installation:
+To install the necessary dependancies for this application, please run the below:
+\`\`\`
+${data.installation}
+\`\`\`
+
+## Tests:
+To run tests for this application, run the following command:
+\`\`\`
+${data.tests}
+\`\`\`
+
 ## Link to Deployed Application
   ${data.link}
 
 ## Usage Instructions
   ${data.usageInstructions}
-  ${renderLicenseInfo(data.license)}
-
-### Authors
+  ${renderLicenseSection(data.license)}
+---
+### Contributing
 * ${data.author}
 * ${data.userEmail}
-* ${data.userGithub}
-
+<a href="https://github.com/${data.userGithub}" target="_blank"><img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white"></a>
+* ${data.contributing}
 `; 
 }
 

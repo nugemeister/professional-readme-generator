@@ -36,8 +36,25 @@ const questions = [
     },
     {
         type: "input",
+        message: "Any notes for people that wish to contribute to this project?",
+        name: "contribute",
+    },
+    {
+        type: "input",
         message: "Please enter any usage instructions for using your project.",
         name: "usageInstructions",
+    },
+    {
+        type: "input",
+        message: "Please enter the commands needed to install your project.",
+        name: "installation",
+        default: 'npm i',
+    },
+    {
+        type: "input",
+        message: "Please enter which command should be used to run tests.",
+        name: "tests",
+        default: 'npm test',
     },
     {
         type: "list",
@@ -49,8 +66,12 @@ const questions = [
                 value: 'Apache2.0'
             },
             {
-                name: 'GPLv2',
-                value: 'GPLv2'
+                name: 'BSD 3',
+                value: 'BSD-3-Clause'
+            },
+            {
+                name: 'GPLv3',
+                value: 'GPLv3'
             },
             {
                 name: 'MIT',
@@ -117,7 +138,7 @@ function init() {
 // Function call to initialize app
 init();
 
-// PROCESS
+// PROCESS FLOW NOTES:
 // prompt user for their answers (data obj w/ answers)
 // add text to the readme template (output)
 // produce the README file output
